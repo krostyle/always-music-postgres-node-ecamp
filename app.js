@@ -8,40 +8,35 @@ const main = async() => {
     switch (accion) {
         case 'nuevo':
             if (params.length === 4) {
-                const { nombre } = await createStudentDatabase(params)
-                console.log(`Estudiante ${nombre} agregado correctamente`);
+                await createStudentDatabase(params)
             } else {
                 console.log('Cantidad de parámetros incorrectos');
             }
             break;
         case 'consulta':
             if (params.length === 0) {
-                const students = await getStudents();
-                console.log(students);
+                await getStudents();
             } else {
                 console.log('No es necesario enviar parámetros');
             }
             break;
         case 'rut':
             if (params.length === 1) {
-                const student = await getStudent(params);
-                console.log(student);
+                await getStudent(params);
             } else {
                 console.log('Cantidad de parámetros incorrectos');
             }
             break;
         case 'editar':
             if (params.length === 4) {
-                const { nombre } = await updateStudent(params)
-                console.log(`Estudiante ${nombre} actualizado correctamente`);
+                await updateStudent(params)
             } else {
                 console.log('Cantidad de parámetros incorrectos');
             }
             break;
         case 'eliminar':
             if (params.length === 1) {
-                const { nombre } = await deleteStudent(params);
-                console.log(`Estudiante ${nombre} eliminado correctamente`);
+                await deleteStudent(params);
             } else {
                 console.log('Cantidad de parámetros incorrectos');
             }
