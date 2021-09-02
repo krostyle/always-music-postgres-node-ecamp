@@ -1,0 +1,9 @@
+CREATE DATABASE alwaysmusic
+
+CREATE TABLE students
+(
+	rut VARCHAR(255) NOT NULL,
+	nombre VARCHAR(255) NOT NULL,
+	curso VARCHAR(255) NOT NULL,
+	nivel VARCHAR(255) NOT NULL
+)
